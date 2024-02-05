@@ -1,0 +1,70 @@
+
+# Botania
+rosatech.universal.tooltip.mana_capacity=§7Mana Capacity: §b%,d
+
+rosatech.magical.stored_mana=§7Stored Mana: §b%,d
+
+rosatech.universal.mana_capacity=§7Capacity: §b%,d
+rosatech.universal.stored_mana=§7Stored: §b%,d
+
+rosatech.machine.mana_hatch.import.tooltip=Mana Input for Multiblocks
+rosatech.machine.mana_hatch.export.tooltip=Mana Output for Multiblocks
+
+rosatech.recipe.mana.input=Mana Input: %d
+rosatech.recipe.mana.output=Mana Output: %d
+
+
+# Botania Machines
+rosatech.machine.mana_hatch.import.ulv.name=ULV Mana Import Hatch
+rosatech.machine.mana_hatch.import.lv.name=LV Mana Import Hatch
+rosatech.machine.mana_hatch.import.mv.name=MV Mana Import Hatch
+rosatech.machine.mana_hatch.import.hv.name=HV Mana Import Hatch
+rosatech.machine.mana_hatch.import.iv.name=IV Mana Import Hatch
+rosatech.machine.mana_hatch.import.luv.name=LuV Mana Import Hatch
+rosatech.machine.mana_hatch.import.zpm.name=ZPM Mana Import Hatch
+rosatech.machine.mana_hatch.import.uv.name=UV Mana Import Hatch
+rosatech.machine.mana_hatch.import.uhv.name=UHV Mana Import Hatch
+
+rosatech.machine.mana_hatch.export.ulv.name=ULV Mana Export Hatch
+rosatech.machine.mana_hatch.export.lv.name=LV Mana Export Hatch
+rosatech.machine.mana_hatch.export.mv.name=MV Mana Export Hatch
+rosatech.machine.mana_hatch.export.hv.name=HV Mana Export Hatch
+rosatech.machine.mana_hatch.export.iv.name=IV Mana Export Hatch
+rosatech.machine.mana_hatch.export.luv.name=LuV Mana Export Hatch
+rosatech.machine.mana_hatch.export.zpm.name=ZPM Mana Export Hatch
+rosatech.machine.mana_hatch.export.uv.name=UV Mana Export Hatch
+rosatech.machine.mana_hatch.export.uhv.name=UHV Mana Export Hatch
+
+# Blood Magic
+rosatech.universal.tooltip.life_essence_capacity=§7Life Essence Capacity: §4%,d
+
+rosatech.recipe.life_essence.input=Life Essence Input: %d
+rosatech.recipe.life_essence.output=Life Essence Output: %d
+
+
+rosatech.machine.life_essence.import.tooltip=Life Essence Input for Multiblocks
+rosatech.machine.life_essence.export.tooltip=Life Essence Output for Multiblocks
+
+rosatech.universal.life_essence_capacity=§7Capacity: §4%,d
+rosatech.universal.stored_life_essence=§7Stored: §4%,d
+
+# Blood Magic Machines
+rosatech.machine.life_essence_hatch.import.ulv.name=ULV Life Essence Import Hatch
+rosatech.machine.life_essence_hatch.import.lv.name=LV Life Essence Import Hatch
+rosatech.machine.life_essence_hatch.import.mv.name=MV Life Essence Import Hatch
+rosatech.machine.life_essence_hatch.import.hv.name=HV Life Essence Import Hatch
+rosatech.machine.life_essence_hatch.import.iv.name=IV Life Essence Import Hatch
+rosatech.machine.life_essence_hatch.import.luv.name=LuV Life Essence Import Hatch
+rosatech.machine.life_essence_hatch.import.zpm.name=ZPM Life Essence Import Hatch
+rosatech.machine.life_essence_hatch.import.uv.name=UV Life Essence Import Hatch
+rosatech.machine.life_essence_hatch.import.uhv.name=UHV Life Essence Import Hatch
+
+rosatech.machine.life_essence_hatch.export.ulv.name=ULV Life Essence Export Hatch
+rosatech.machine.life_essence_hatch.export.lv.name=LV Life Essence Export Hatch
+rosatech.machine.life_essence_hatch.export.mv.name=MV Life Essence Export Hatch
+rosatech.machine.life_essence_hatch.export.hv.name=HV Life Essence Export Hatch
+rosatech.machine.life_essence_hatch.export.iv.name=IV Life Essence Export Hatch
+rosatech.machine.life_essence_hatch.export.luv.name=LuV Life Essence Export Hatch
+rosatech.machine.life_essence_hatch.export.zpm.name=ZPM Life Essence Export Hatch
+rosatech.machine.life_essence_hatch.export.uv.name=UV Life Essence Export Hatch
+rosatech.machine.life_essence_hatch.export.uhv.name=UHV Life Essence Export Hatch

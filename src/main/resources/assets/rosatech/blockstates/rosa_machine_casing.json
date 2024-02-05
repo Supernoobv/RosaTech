@@ -1,0 +1,19 @@
+{
+  "forge_marker" : 1,
+  "defaults": {
+    "model": "minecraft:cube_bottom_top",
+    "textures": {
+      "bottom": "gregtech:blocks/casings/magical_casing/side",
+      "top": "gregtech:blocks/casings/magical_casing/side",
+      "side": "gregtech:blocks/casings/magical_casing/side"
+    }
+  },
+  "variants" : {
+    "variant=magical_casing" : {
+      "model" : "minecraft:cube_all",
+      "textures" : {
+        "all" : "gregtech:blocks/casings/magical_casing/side"
+      }
+    }
+  }
+}
