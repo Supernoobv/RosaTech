@@ -34,6 +34,10 @@ Adding integrations from magic mods to gregtech!
 > - This is to be used in recipes.
 >
 > You can disable these behaviors by simply right clicking the hatch with a soft mallet.
+
 ## Adding new content with this addon
+
+- Adding a multiblock that supports mana: https://hastebin.com/share/fiyofafuta.typescript
+- Adding a recipemap that supports mana: https://hastebin.com/share/qepajofenu.cpp
 
 
