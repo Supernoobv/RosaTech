@@ -48,4 +48,22 @@ public interface IManaTank {
      */
     void replace(int toSet);
 
+    /**
+     * Initiates a request that can be filled at any time.
+     * @param toChange
+     */
+    void pendRequest(int toChange);
+
+    /**
+     * Completes the current pending request.
+     */
+    void completeRequest(boolean drainOrFill);
+
+    /**
+     * Checks if this tank has a pending request.
+     *
+     * @return True if there's a pending request
+     */
+    boolean hasPendingRequest();
+
 }

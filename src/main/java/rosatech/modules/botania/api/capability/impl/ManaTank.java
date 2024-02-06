@@ -9,6 +9,8 @@ public class ManaTank implements IManaTank {
 
     protected int capacity;
     protected int amount;
+    protected int pendingRequest;
+
 
     public ManaTank(int capacity, int amount) {
         this.amount = amount;
@@ -106,6 +108,31 @@ public class ManaTank implements IManaTank {
         }
 
         amount = toSet;
+    }
+
+    @Override
+    public void pendRequest(int toChange) {
+        if (toChange < 0) {
+            return;
+        }
+
+        pendingRequest = toChange;
+    }
+
+    @Override
+    public void completeRequest(boolean drainOrFill) {
+        if (drainOrFill) {
+            fill(pendingRequest, true);
+        } else {
+            drain(pendingRequest, true);
+        }
+
+        pendingRequest = 0;
+    }
+
+    @Override
+    public boolean hasPendingRequest() {
+        return pendingRequest > 0;
     }
 
 }

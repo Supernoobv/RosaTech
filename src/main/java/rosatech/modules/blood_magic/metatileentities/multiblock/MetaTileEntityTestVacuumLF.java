@@ -19,13 +19,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import rosatech.modules.blood_magic.api.metatileentity.multiblock.BloodMagicMultiblockAbility;
 import rosatech.modules.blood_magic.api.recipes.RecipeLogicLifeEssence;
+import rosatech.modules.blood_magic.recipes.BloodMagicRecipeMaps;
 import rosatech.modules.botania.api.metatileentity.multiblock.BotaniaMultiblockAbility;
 import rosatech.modules.botania.api.recipes.RecipeLogicMana;
 import rosatech.modules.botania.recipes.BotaniaRecipeMaps;
 
 public class MetaTileEntityTestVacuumLF extends RecipeMapMultiblockController {
     public MetaTileEntityTestVacuumLF(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, BotaniaRecipeMaps.MANA_VACUUM_RECIPES);
+        super(metaTileEntityId, BloodMagicRecipeMaps.LIFE_ESSENCE_VACUUM_RECIPES);
         this.recipeMapWorkable = new RecipeLogicLifeEssence(this);
     }
 

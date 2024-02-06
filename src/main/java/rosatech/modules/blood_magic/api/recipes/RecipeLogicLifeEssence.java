@@ -44,18 +44,32 @@ public class RecipeLogicLifeEssence extends MultiblockRecipeLogic {
         return toReturn;
     }
 
-    public int getTotalLifeEssenceCapacity(boolean isExport) {
+    public void sendPendingRequest(int total, boolean isExport) {
         RecipeMapMultiblockController controller = (RecipeMapMultiblockController) metaTileEntity;
 
-        int toReturn = 0;
+        int toFill = total;
 
         List<ISoulTank> soulTanks = isExport ? controller.getAbilities(BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE) : controller.getAbilities(BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE);
         for (int i = 0; i < soulTanks.size(); i++) {
             ISoulTank tank = soulTanks.get(i);
-            toReturn += tank.getCapacity();
+            if (isExport && tank.getAmount() < tank.getCapacity()) {
+                tank.pendRequest(-toFill);
+            } else if (!isExport && tank.getAmount() > 0) {
+                tank.pendRequest(toFill);
+            }
         }
+    }
 
-        return toReturn;
+    public void completePendingRequests(boolean isExport) {
+        RecipeMapMultiblockController controller = (RecipeMapMultiblockController) metaTileEntity;
+
+        List<ISoulTank> soulTanks = isExport ? controller.getAbilities(BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE) : controller.getAbilities(BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE);
+        for (int i = 0; i < soulTanks.size(); i++) {
+            ISoulTank tank = soulTanks.get(i);
+            if (tank.hasPendingRequest()) {
+                tank.completeRequest(isExport);
+            }
+        }
     }
 
     public void fillSoulTanks(int total, boolean isExport) {
@@ -79,8 +93,18 @@ public class RecipeLogicLifeEssence extends MultiblockRecipeLogic {
         super.setupRecipe(recipe);
         if (recipe.hasProperty(LifeEssenceProperty.getInstance())) {
             int toFill = recipe.getProperty(LifeEssenceProperty.getInstance(), 0);
-            fillSoulTanks(toFill, toFill < 0);
+            if (toFill < 0) {
+                sendPendingRequest(toFill, true);
+                return;
+            }
+
+            fillSoulTanks(toFill, false);
         }
     }
 
+    @Override
+    protected void completeRecipe() {
+        super.completeRecipe();
+        completePendingRequests(true);
+    }
 }

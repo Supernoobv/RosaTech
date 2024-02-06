@@ -20,7 +20,11 @@ public class RecipeLogicMana extends MultiblockRecipeLogic {
         super.setupRecipe(recipe);
         if (recipe.hasProperty(ManaProperty.getInstance())) {
             int toDrain = recipe.getProperty(ManaProperty.getInstance(), 0);
-            fillManaTanks(toDrain, toDrain < 0);
+            if (toDrain < 0) {
+                sendPendingRequest(toDrain, true);
+                return;
+            }
+            fillManaTanks(toDrain, false);
         }
     }
 
@@ -68,6 +72,34 @@ public class RecipeLogicMana extends MultiblockRecipeLogic {
         return toReturn;
     }
 
+    public void sendPendingRequest(int total, boolean isExport) {
+        RecipeMapMultiblockController controller = (RecipeMapMultiblockController) metaTileEntity;
+
+        int toFill = total;
+
+        List<IManaTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
+        for (int i = 0; i < manaTanks.size(); i++) {
+            IManaTank tank = manaTanks.get(i);
+            if (isExport && tank.getAmount() < tank.getCapacity()) {
+                tank.pendRequest(-toFill);
+            } else if (!isExport && tank.getAmount() > 0) {
+                tank.pendRequest(toFill);
+            }
+        }
+    }
+
+    public void completePendingRequests(boolean isExport) {
+        RecipeMapMultiblockController controller = (RecipeMapMultiblockController) metaTileEntity;
+
+        List<IManaTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
+        for (int i = 0; i < manaTanks.size(); i++) {
+            IManaTank tank = manaTanks.get(i);
+            if (tank.hasPendingRequest()) {
+                tank.completeRequest(isExport);
+            }
+        }
+    }
+    
     public void fillManaTanks(int total, boolean isExport) {
         RecipeMapMultiblockController controller = (RecipeMapMultiblockController) metaTileEntity;
 
@@ -83,4 +115,12 @@ public class RecipeLogicMana extends MultiblockRecipeLogic {
             }
         }
     }
+
+    @Override
+    protected void completeRecipe() {
+        super.completeRecipe();
+        completePendingRequests(true);
+    }
+    
+    
 }

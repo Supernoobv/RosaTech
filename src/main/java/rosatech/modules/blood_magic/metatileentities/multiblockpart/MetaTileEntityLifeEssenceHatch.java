@@ -64,6 +64,8 @@ public class MetaTileEntityLifeEssenceHatch extends MetaTileEntityMultiblockPart
         this.workingEnabled = true;
         this.isExport = isExport;
         this.orbHandler = new BloodOrbItemHandler(this);
+        initializeInventory();
+
     }
 
     @Override
@@ -85,14 +87,17 @@ public class MetaTileEntityLifeEssenceHatch extends MetaTileEntityMultiblockPart
     }
 
     public void transferLifeEssence() {
-        int toTransfer = getLifeEssenceTransferRate();
+        int toTransfer = Math.min(getLifeEssenceTransferRate(), network.getCurrentEssence());
 
         if (isExport) {
+            toTransfer = getLifeEssenceTransferRate();
             network.add(new SoulTicket(soulTank.drain(toTransfer, true)), toTransfer);
         } else {
-            network.syphon(new SoulTicket(soulTank.fill(toTransfer, true)));
+            network.syphon(new SoulTicket(toTransfer));
+            soulTank.fill(toTransfer, true);
         }
     }
+
 
     @Override
     public void update() {
@@ -210,7 +215,7 @@ public class MetaTileEntityLifeEssenceHatch extends MetaTileEntityMultiblockPart
                 .label(6, 6, getMetaFullName())
                 .widget(new AdvancedTextWidget(11, 20, getLifeEssenceCapacityText(), 0xFFFFFF))
                 .widget(new AdvancedTextWidget(11, 30, getLifeEssenceAmountText(), 0xFFFFFF))
-                .widget(new SlotWidget(orbHandler, 0, 88, 40, true, true))
+                .widget(new SlotWidget(orbHandler, 0, 118, 35, true, true))
                 .bindPlayerInventory(entityPlayer.inventory)
                 .build(getHolder(), entityPlayer);
     }
@@ -219,11 +224,6 @@ public class MetaTileEntityLifeEssenceHatch extends MetaTileEntityMultiblockPart
 
         public BloodOrbItemHandler(MetaTileEntity metaTileEntity) {
             super(metaTileEntity, 1, null, false);
-        }
-
-        @Override
-        public int getSlots() {
-            return 1;
         }
 
         @Override
@@ -256,9 +256,7 @@ public class MetaTileEntityLifeEssenceHatch extends MetaTileEntityMultiblockPart
         public void onContentsChanged(int slot) {
             super.onContentsChanged(slot);
             ItemStack stack = this.getStackInSlot(slot);
-            if (stack != null && !stack.isEmpty()) {
-                network = getSoulNetwork(stack);
-            }
+            network = getSoulNetwork(stack);
         }
     }
     @Override

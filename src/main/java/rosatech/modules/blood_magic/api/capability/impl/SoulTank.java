@@ -5,6 +5,8 @@ import rosatech.modules.blood_magic.api.capability.ISoulTank;
 public class SoulTank implements ISoulTank {
     protected int capacity;
     protected int amount;
+    protected int pendingRequest;
+
 
     public SoulTank(int capacity, int amount) {
         this.amount = amount;
@@ -51,11 +53,12 @@ public class SoulTank implements ISoulTank {
             return 0;
         }
 
-        int drained = maxDrain;
-
         if (amount < maxDrain) {
             maxDrain = amount;
         }
+
+        int drained = maxDrain;
+
 
         if (doDrain) {
             amount -= drained;
@@ -102,5 +105,30 @@ public class SoulTank implements ISoulTank {
         }
 
         amount = toSet;
+    }
+
+    @Override
+    public void pendRequest(int toChange) {
+        if (toChange < 0) {
+            return;
+        }
+
+        pendingRequest = toChange;
+    }
+
+    @Override
+    public void completeRequest(boolean drainOrFill) {
+        if (drainOrFill) {
+            fill(pendingRequest, true);
+        } else {
+            drain(pendingRequest, true);
+        }
+
+        pendingRequest = 0;
+    }
+
+    @Override
+    public boolean hasPendingRequest() {
+        return pendingRequest > 0;
     }
 }
