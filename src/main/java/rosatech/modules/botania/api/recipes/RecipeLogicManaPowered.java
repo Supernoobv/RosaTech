@@ -7,17 +7,17 @@ import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMap;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
-import rosatech.modules.botania.api.capability.IManaTank;
+import rosatech.api.capability.IIntegerTank;
 
 import org.jetbrains.annotations.NotNull;
 
 public class RecipeLogicManaPowered extends AbstractRecipeLogic {
 
-    private final IManaTank manaTank;
+    private final IIntegerTank manaTank;
 
     private final double conversionRate;
 
-    public RecipeLogicManaPowered(MetaTileEntity tileEntity, RecipeMap<?> recipeMap, IManaTank tank, double conversionRate) {
+    public RecipeLogicManaPowered(MetaTileEntity tileEntity, RecipeMap<?> recipeMap, IIntegerTank tank, double conversionRate) {
         super(tileEntity, recipeMap);
         this.manaTank = tank;
         this.conversionRate = conversionRate;

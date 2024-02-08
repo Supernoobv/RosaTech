@@ -1,19 +1,23 @@
-package rosatech.modules.blood_magic.api.capability.impl;
+package rosatech.api.capability.impl;
 
-import rosatech.modules.blood_magic.api.capability.ISoulTank;
+import rosatech.api.capability.IIntegerTank;
 
-public class SoulTank implements ISoulTank {
+/**
+ * Reference implementation of {@link IIntegerTank}
+ */
+public class IntegerTank implements IIntegerTank {
+
     protected int capacity;
     protected int amount;
     protected int pendingRequest;
 
 
-    public SoulTank(int capacity, int amount) {
+    public IntegerTank(int capacity, int amount) {
         this.amount = amount;
         this.capacity = capacity;
     }
 
-    public SoulTank(int capacity) {
+    public IntegerTank(int capacity) {
         this(capacity, 0);
     }
 
@@ -53,12 +57,11 @@ public class SoulTank implements ISoulTank {
             return 0;
         }
 
+        int drained = maxDrain;
+
         if (amount < maxDrain) {
             maxDrain = amount;
         }
-
-        int drained = maxDrain;
-
 
         if (doDrain) {
             amount -= drained;
@@ -131,4 +134,5 @@ public class SoulTank implements ISoulTank {
     public boolean hasPendingRequest() {
         return pendingRequest > 0;
     }
+
 }

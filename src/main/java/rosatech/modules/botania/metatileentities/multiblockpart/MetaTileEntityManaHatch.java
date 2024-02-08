@@ -31,8 +31,8 @@ import net.minecraftforge.common.capabilities.Capability;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import rosatech.client.renderer.textures.RosaTextures;
-import rosatech.modules.botania.api.capability.IManaTank;
-import rosatech.modules.botania.api.capability.impl.ManaTank;
+import rosatech.api.capability.IIntegerTank;
+import rosatech.api.capability.impl.IntegerTank;
 import rosatech.modules.botania.api.metatileentity.multiblock.BotaniaMultiblockAbility;
 import vazkii.botania.api.mana.IManaPool;
 import vazkii.botania.api.mana.IManaReceiver;
@@ -40,18 +40,18 @@ import vazkii.botania.api.mana.IManaReceiver;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class MetaTileEntityManaHatch extends MetaTileEntityMultiblockPart implements IMultiblockAbilityPart<IManaTank>, IControllable, IManaPool {
+public class MetaTileEntityManaHatch extends MetaTileEntityMultiblockPart implements IMultiblockAbilityPart<IIntegerTank>, IControllable, IManaPool {
 
     private static final int INITIAL_MANA_CAPACITY = 12500;
     private boolean workingEnabled;
 
-    private ManaTank manaTank;
+    private IntegerTank manaTank;
 
     private boolean isExport;
 
     public MetaTileEntityManaHatch(ResourceLocation metaTileEntityId, int tier, boolean isExport) {
         super(metaTileEntityId, tier);
-        this.manaTank = new ManaTank(getManaCapacity(), 0);
+        this.manaTank = new IntegerTank(getManaCapacity(), 0);
         this.workingEnabled = true;
         this.isExport = isExport;
     }
@@ -218,12 +218,12 @@ public class MetaTileEntityManaHatch extends MetaTileEntityMultiblockPart implem
 
 
     @Override
-    public MultiblockAbility<IManaTank> getAbility() {
+    public MultiblockAbility<IIntegerTank> getAbility() {
         return isExport ? BotaniaMultiblockAbility.EXPORT_MANA : BotaniaMultiblockAbility.IMPORT_MANA;
     }
 
     @Override
-    public void registerAbilities(List<IManaTank> abilityList) {
+    public void registerAbilities(List<IIntegerTank> abilityList) {
         abilityList.add(manaTank);
     }
 

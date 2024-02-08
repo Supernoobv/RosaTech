@@ -4,7 +4,7 @@ import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.recipes.Recipe;
 import org.jetbrains.annotations.NotNull;
-import rosatech.modules.botania.api.capability.IManaTank;
+import rosatech.api.capability.IIntegerTank;
 import rosatech.modules.botania.api.metatileentity.multiblock.BotaniaMultiblockAbility;
 import rosatech.modules.botania.api.recipes.recipeproperties.ManaProperty;
 
@@ -48,9 +48,9 @@ public class RecipeLogicMana extends MultiblockRecipeLogic {
         RecipeMapMultiblockController controller = (RecipeMapMultiblockController) metaTileEntity;
         int toReturn = 0;
 
-        List<IManaTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
+        List<IIntegerTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
         for (int i = 0; i < manaTanks.size(); i++) {
-            IManaTank tank = manaTanks.get(i);
+            IIntegerTank tank = manaTanks.get(i);
             toReturn += tank.getAmount();
         }
 
@@ -63,9 +63,9 @@ public class RecipeLogicMana extends MultiblockRecipeLogic {
 
         int toReturn = 0;
 
-        List<IManaTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
+        List<IIntegerTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
         for (int i = 0; i < manaTanks.size(); i++) {
-            IManaTank tank = manaTanks.get(i);
+            IIntegerTank tank = manaTanks.get(i);
             toReturn += tank.getCapacity();
         }
 
@@ -77,9 +77,9 @@ public class RecipeLogicMana extends MultiblockRecipeLogic {
 
         int toFill = total;
 
-        List<IManaTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
+        List<IIntegerTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
         for (int i = 0; i < manaTanks.size(); i++) {
-            IManaTank tank = manaTanks.get(i);
+            IIntegerTank tank = manaTanks.get(i);
             if (isExport && tank.getAmount() < tank.getCapacity()) {
                 tank.pendRequest(-toFill);
             } else if (!isExport && tank.getAmount() > 0) {
@@ -91,9 +91,9 @@ public class RecipeLogicMana extends MultiblockRecipeLogic {
     public void completePendingRequests(boolean isExport) {
         RecipeMapMultiblockController controller = (RecipeMapMultiblockController) metaTileEntity;
 
-        List<IManaTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
+        List<IIntegerTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
         for (int i = 0; i < manaTanks.size(); i++) {
-            IManaTank tank = manaTanks.get(i);
+            IIntegerTank tank = manaTanks.get(i);
             if (tank.hasPendingRequest()) {
                 tank.completeRequest(isExport);
             }
@@ -105,9 +105,9 @@ public class RecipeLogicMana extends MultiblockRecipeLogic {
 
         int toFill = total;
 
-        List<IManaTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
+        List<IIntegerTank> manaTanks = isExport ? controller.getAbilities(BotaniaMultiblockAbility.EXPORT_MANA) : controller.getAbilities(BotaniaMultiblockAbility.IMPORT_MANA);
         for (int i = 0; i < manaTanks.size(); i++) {
-            IManaTank tank = manaTanks.get(i);
+            IIntegerTank tank = manaTanks.get(i);
             if (isExport && tank.getAmount() < tank.getCapacity()) {
                 toFill -= tank.fill(-toFill, true);
             } else if (!isExport && tank.getAmount() > 0) {

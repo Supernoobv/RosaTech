@@ -1,6 +1,12 @@
-package rosatech.modules.blood_magic.api.capability;
+package rosatech.api.capability;
 
-public interface ISoulTank {
+/**
+ * A tank that holds a integer value
+ *
+ * This is used for stuff like mana, and life essence.
+ *
+ */
+public interface IIntegerTank {
 
     /**
      *
@@ -58,4 +64,5 @@ public interface ISoulTank {
      * @return True if there's a pending request
      */
     boolean hasPendingRequest();
+
 }

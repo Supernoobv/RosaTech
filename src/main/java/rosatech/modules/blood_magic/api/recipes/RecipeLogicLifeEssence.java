@@ -4,7 +4,7 @@ import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.recipes.Recipe;
 import org.jetbrains.annotations.NotNull;
-import rosatech.modules.blood_magic.api.capability.ISoulTank;
+import rosatech.api.capability.IIntegerTank;
 import rosatech.modules.blood_magic.api.metatileentity.multiblock.BloodMagicMultiblockAbility;
 import rosatech.modules.blood_magic.api.recipes.recipeproperties.LifeEssenceProperty;
 
@@ -34,9 +34,9 @@ public class RecipeLogicLifeEssence extends MultiblockRecipeLogic {
         RecipeMapMultiblockController controller = (RecipeMapMultiblockController) metaTileEntity;
         int toReturn = 0;
 
-        List<ISoulTank> soulTanks = isExport ? controller.getAbilities(BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE) : controller.getAbilities(BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE);
+        List<IIntegerTank> soulTanks = isExport ? controller.getAbilities(BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE) : controller.getAbilities(BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE);
         for (int i = 0; i < soulTanks.size(); i++) {
-            ISoulTank tank = soulTanks.get(i);
+            IIntegerTank tank = soulTanks.get(i);
             toReturn += tank.getAmount();
         }
 
@@ -49,9 +49,9 @@ public class RecipeLogicLifeEssence extends MultiblockRecipeLogic {
 
         int toFill = total;
 
-        List<ISoulTank> soulTanks = isExport ? controller.getAbilities(BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE) : controller.getAbilities(BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE);
+        List<IIntegerTank> soulTanks = isExport ? controller.getAbilities(BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE) : controller.getAbilities(BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE);
         for (int i = 0; i < soulTanks.size(); i++) {
-            ISoulTank tank = soulTanks.get(i);
+            IIntegerTank tank = soulTanks.get(i);
             if (isExport && tank.getAmount() < tank.getCapacity()) {
                 tank.pendRequest(-toFill);
             } else if (!isExport && tank.getAmount() > 0) {
@@ -63,9 +63,9 @@ public class RecipeLogicLifeEssence extends MultiblockRecipeLogic {
     public void completePendingRequests(boolean isExport) {
         RecipeMapMultiblockController controller = (RecipeMapMultiblockController) metaTileEntity;
 
-        List<ISoulTank> soulTanks = isExport ? controller.getAbilities(BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE) : controller.getAbilities(BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE);
+        List<IIntegerTank> soulTanks = isExport ? controller.getAbilities(BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE) : controller.getAbilities(BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE);
         for (int i = 0; i < soulTanks.size(); i++) {
-            ISoulTank tank = soulTanks.get(i);
+            IIntegerTank tank = soulTanks.get(i);
             if (tank.hasPendingRequest()) {
                 tank.completeRequest(isExport);
             }
@@ -77,9 +77,9 @@ public class RecipeLogicLifeEssence extends MultiblockRecipeLogic {
 
         int toFill = total;
 
-        List<ISoulTank> soulTanks = isExport ? controller.getAbilities(BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE) : controller.getAbilities(BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE);
+        List<IIntegerTank> soulTanks = isExport ? controller.getAbilities(BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE) : controller.getAbilities(BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE);
         for (int i = 0; i < soulTanks.size(); i++) {
-            ISoulTank tank = soulTanks.get(i);
+            IIntegerTank tank = soulTanks.get(i);
             if (isExport && tank.getAmount() < tank.getCapacity()) {
                 toFill -= tank.fill(-toFill, true);
             } else if (!isExport && tank.getAmount() > 0) {

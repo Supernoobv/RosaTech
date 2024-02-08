@@ -37,21 +37,22 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import rosatech.api.capability.IIntegerTank;
+import rosatech.api.capability.impl.IntegerTank;
 import rosatech.client.renderer.textures.RosaTextures;
-import rosatech.modules.blood_magic.api.capability.ISoulTank;
-import rosatech.modules.blood_magic.api.capability.impl.SoulTank;
+import rosatech.api.capability.IIntegerTank;
 import rosatech.modules.blood_magic.api.metatileentity.multiblock.BloodMagicMultiblockAbility;
 
 import java.util.List;
 import java.util.function.Consumer;
 
-public class MetaTileEntityLifeEssenceHatch extends MetaTileEntityMultiblockPart implements IMultiblockAbilityPart<ISoulTank>, IControllable {
+public class MetaTileEntityLifeEssenceHatch extends MetaTileEntityMultiblockPart implements IMultiblockAbilityPart<IIntegerTank>, IControllable {
 
     private static final int INITAL_CAPACITY = 6250;
     private static final int INITIAL_TRANSFER_RATE = 1750;
     private boolean workingEnabled;
 
-    private SoulTank soulTank;
+    private IntegerTank soulTank;
 
     private SoulNetwork network;
 
@@ -60,7 +61,7 @@ public class MetaTileEntityLifeEssenceHatch extends MetaTileEntityMultiblockPart
 
     public MetaTileEntityLifeEssenceHatch(ResourceLocation metaTileEntityId, int tier, boolean isExport) {
         super(metaTileEntityId, tier);
-        this.soulTank = new SoulTank(getLifeEssenceCapacity(), 0);
+        this.soulTank = new IntegerTank(getLifeEssenceCapacity(), 0);
         this.workingEnabled = true;
         this.isExport = isExport;
         this.orbHandler = new BloodOrbItemHandler(this);
@@ -278,12 +279,12 @@ public class MetaTileEntityLifeEssenceHatch extends MetaTileEntityMultiblockPart
     }
 
     @Override
-    public void registerAbilities(List<ISoulTank> abilityList) {
+    public void registerAbilities(List<IIntegerTank> abilityList) {
         abilityList.add(soulTank);
     }
 
     @Override
-    public MultiblockAbility<ISoulTank> getAbility() {
+    public MultiblockAbility<IIntegerTank> getAbility() {
         return isExport ? BloodMagicMultiblockAbility.EXPORT_LIFE_ESSENCE : BloodMagicMultiblockAbility.IMPORT_LIFE_ESSENCE;
     }
 

@@ -17,7 +17,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 import rosatech.client.renderer.textures.RosaTextures;
-import rosatech.modules.botania.api.capability.impl.ManaTank;
+import rosatech.api.capability.impl.IntegerTank;
 import rosatech.modules.botania.api.recipes.RecipeLogicManaPowered;
 import vazkii.botania.api.mana.IManaReceiver;
 
@@ -25,12 +25,12 @@ public class ManaMetaTileEntity extends MetaTileEntity implements IManaReceiver 
 
     protected final ICubeRenderer renderer;
     protected RecipeLogicManaPowered workableHandler;
-    protected ManaTank manaTank;
+    protected IntegerTank manaTank;
 
 
     public ManaMetaTileEntity(ResourceLocation metaTileEntityId, RecipeMap<?> recipeMap, ICubeRenderer renderer) {
         super(metaTileEntityId);
-        this.manaTank = new ManaTank(35000);
+        this.manaTank = new IntegerTank(35000);
         this.workableHandler = new RecipeLogicManaPowered(this, recipeMap, manaTank, 1.0);
         this.renderer = renderer;
     }
