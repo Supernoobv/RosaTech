@@ -17,6 +17,15 @@ import org.jetbrains.gradle.ext.Gradle
 
 import static org.gradle.internal.logging.text.StyledTextOutput.Style
 
+buildscript {
+    ext.kotlin_version = '1.9.23'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
 plugins {
     id 'java'
     id 'java-library'
@@ -34,6 +43,7 @@ plugins {
     id 'org.jetbrains.kotlin.kapt' version '1.8.0' apply false
     id 'com.google.devtools.ksp' version '1.8.0-1.0.9' apply false
 }
+apply plugin: 'kotlin'
 
 def out = services.get(StyledTextOutputFactory).create('an-output')
 
@@ -456,7 +466,8 @@ repositories {
             }
         }
     }
-    mavenLocal() // Must be last for caching to work
+    mavenLocal()
+    mavenCentral() // Must be last for caching to work
 }
 
 

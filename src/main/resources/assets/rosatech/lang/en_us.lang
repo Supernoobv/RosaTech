@@ -1,3 +1,156 @@
+# General
+rosatech.universal.dimensional_energy_capacity=§7Capacity: §9%,d
+rosatech.universal.dimensional_energy_stored=§7Stored: §9%,d
+
+rosatech.dimensional_hatch.set_owner=Replaced network owner
+rosatech.dimensional_hatch.owner=§7Owner: §r%,d
+
+rosatech.machine.dimensional_energy_hatch.tooltip=Configure with a screwdriver!
+
+# Machines
+rosatech.machine.dimensional_energy_hatch.input.ulv.name=ULV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.lv.name=LV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.mv.name=MV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.hv.name=HV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.ev.name=EV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.iv.name=IV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.luv.name.name=LuV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.zpm.name=ZPM Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.uv.name.name=UV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.uhv.name=UHV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.uev.name=UEV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.uiv.name=UIV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.uxv.name=UXV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.opv.name=OpV Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input.max.name=MAX Dimensional Energy Hatch
+
+rosatech.machine.dimensional_energy_hatch.output.ulv.name=ULV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.lv.name=LV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.mv.name=MV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.hv.name=HV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.ev.name=EV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.iv.name=IV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.luv.name=LuV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.zpm.name=ZPM Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.uv.name=UV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.uhv.name=UHV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.uev.name=UEV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.uiv.name=UIV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.uxv.name=UXV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.opv.name=OpV Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output.max.name=MAX Dimensional Dynamo Hatch
+
+rosatech.machine.dimensional_energy_hatch.input_4a.iv.name=IV 4A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_4a.luv.name=LuV 4A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_4a.zpm.name.name=ZPM 4A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_4a.uv.name=UV 4A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_4a.uhv.name=UHV 4A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_4a.uev.name=UEV 4A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_4a.uiv.name=UIV 4A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_4a.uxv.name=UXV 4A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_4a.opv.name=OpV 4A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_4a.max.name=MAX 4A Dimensional Energy Hatch
+
+rosatech.machine.dimensional_energy_hatch.output_4a.iv.name=IV 4A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_4a.luv.name=LuV 4A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_4a.zpm.name=ZPM 4A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_4a.uv.name=UV 4A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_4a.uhv.name=UHV 4A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_4a.uev.name=UEV 4A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_4a.uiv.name=UIV 4A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_4a.uxv.name=UXV 4A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_4a.opv.name=OpV 4A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_4a.max.name=MAX 4A Dimensional Dynamo Hatch
+
+rosatech.machine.dimensional_energy_hatch.input_16a.iv.name=IV 16A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_16a.luv.name=LuV 16A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_16a.zpm.name=ZPM 16A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_16a.uv.name=UV 16A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_16a.uhv.name=UHV 16A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_16a.uev.name=UEV 16A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_16a.uiv.name=UIV 16A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_16a.uxv.name=UXV 16A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_16a.opv.name=OpV 16A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_16a.max.name=MAX 16A Dimensional Energy Hatch
+
+rosatech.machine.dimensional_energy_hatch.output_16a.iv.name=IV 16A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_16a.luv.name=LuV 16A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_16a.zpm.name=ZPM 16A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_16a.uv.name=UV 16A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_16a.uhv.name=UHV 16A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_16a.uev.name=UEV 16A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_16a.uiv.name=UIV 16A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_16a.uxv.name=UXV 16A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_16a.opv.name=OpV 16A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_16a.max.name=MAX 16A Dimensional Dynamo Hatch
+
+rosatech.machine.dimensional_energy_hatch.input_64a.iv.name=IV 64A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_64a.luv.name=LuV 64A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_64a.zpm.name=ZPM 64A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_64a.uv.name=UV 64A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_64a.uhv.name=UHV 64A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_64a.uev.name=UEV 64A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_64a.uiv.name=UIV 64A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_64a.uxv.name=UXV 64A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_64a.opv.name=OpV 64A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_64a.max.name=MAX 64A Dimensional Energy Hatch
+
+rosatech.machine.dimensional_energy_hatch.output_64a.iv.name=IV 64A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_64a.luv.name=LuV 64A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_64a.zpm.name=ZPM 64A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_64a.uv.name=UV 64A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_64a.uhv.name=UHV 64A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_64a.uev.name=UEV 64A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_64a.uiv.name=UIV 64A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_64a.uxv.name=UXV 64A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_64a.opv.name=OpV 64A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_64a.max.name=MAX 64A Dimensional Dynamo Hatch
+
+rosatech.machine.dimensional_energy_hatch.input_256a.iv.name=IV 256A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_256a.luv.name=LuV 256A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_256a.zpm.name=ZPM 256A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_256a.uv.name=UV 256A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_256a.uhv.name=UHV 256A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_256a.uev.name=UEV 256A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_256a.uiv.name=UIV 256A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_256a.uxv.name=UXV 256A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_256a.opv.name=OpV 256A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_256a.max.name=MAX 256A Dimensional Energy Hatch
+
+rosatech.machine.dimensional_energy_hatch.output_256a.iv.name=IV 256A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_256a.luv.name=LuV 256A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_256a.zpm.name=ZPM 256A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_256a.uv.name=UV 256A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_256a.uhv.name=UHV 256A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_256a.uev.name=UEV 256A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_256a.uiv.name=UIV 256A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_256a.uxv.name=UXV 256A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_256a.opv.name=OpV 256A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_256a.max.name=MAX 256A Dimensional Dynamo Hatch
+
+rosatech.machine.dimensional_energy_hatch.input_1024a.iv.name=IV 1024A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_1024a.luv.name=LuV 1024A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_1024a.zpm.name=ZPM 1024A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_1024a.uv.name=UV 1024A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_1024a.uhv.name=UHV 1024A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_1024a.uev.name=UEV 1024A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_1024a.uiv.name=UIV 1024A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_1024a.uxv.name=UXV 1024A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_1024a.opv.name=OpV 1024A Dimensional Energy Hatch
+rosatech.machine.dimensional_energy_hatch.input_1024a.max.name=MAX 1024A Dimensional Energy Hatch
+
+rosatech.machine.dimensional_energy_hatch.output_1024a.iv.name=IV 1024A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_1024a.luv.name=LuV 1024A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_1024a.zpm.name=ZPM 1024A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_1024a.uv.name=UV 1024A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_1024a.uhv.name=UHV 1024A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_1024a.uev.name=UEV 1024A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_1024a.uiv.name=UIV 1024A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_1024a.uxv.name=UXV 1024A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_1024a.opv.name=OpV 1024A Dimensional Dynamo Hatch
+rosatech.machine.dimensional_energy_hatch.output_1024a.max.name=MAX 1024A Dimensional Dynamo Hatch
+
+
 
 # Botania
 rosatech.universal.tooltip.mana_capacity=§7Mana Capacity: §b%,d
@@ -21,9 +174,9 @@ rosatech.machine.mana_hatch.import.mv.name=MV Mana Import Hatch
 rosatech.machine.mana_hatch.import.hv.name=HV Mana Import Hatch
 rosatech.machine.mana_hatch.import.ev.name=HV Mana Import Hatch
 rosatech.machine.mana_hatch.import.iv.name=IV Mana Import Hatch
-rosatech.machine.mana_hatch.import.luv.name=LuV Mana Import Hatch
+rosatech.machine.mana_hatch.import.luv.name.name=LuV Mana Import Hatch
 rosatech.machine.mana_hatch.import.zpm.name=ZPM Mana Import Hatch
-rosatech.machine.mana_hatch.import.uv.name=UV Mana Import Hatch
+rosatech.machine.mana_hatch.import.uv.name.name=UV Mana Import Hatch
 rosatech.machine.mana_hatch.import.uhv.name=UHV Mana Import Hatch
 
 rosatech.machine.mana_hatch.export.ulv.name=ULV Mana Export Hatch
@@ -32,9 +185,9 @@ rosatech.machine.mana_hatch.export.mv.name=MV Mana Export Hatch
 rosatech.machine.mana_hatch.export.hv.name=HV Mana Export Hatch
 rosatech.machine.mana_hatch.export.ev.name=HV Mana Export Hatch
 rosatech.machine.mana_hatch.export.iv.name=IV Mana Export Hatch
-rosatech.machine.mana_hatch.export.luv.name=LuV Mana Export Hatch
+rosatech.machine.mana_hatch.export.luv.name.name=LuV Mana Export Hatch
 rosatech.machine.mana_hatch.export.zpm.name=ZPM Mana Export Hatch
-rosatech.machine.mana_hatch.export.uv.name=UV Mana Export Hatch
+rosatech.machine.mana_hatch.export.uv.name.name=UV Mana Export Hatch
 rosatech.machine.mana_hatch.export.uhv.name=UHV Mana Export Hatch
 
 # Blood Magic
@@ -57,9 +210,9 @@ rosatech.machine.life_essence_hatch.import.mv.name=MV Life Essence Import Hatch
 rosatech.machine.life_essence_hatch.import.hv.name=HV Life Essence Import Hatch
 rosatech.machine.life_essence_hatch.import.ev.name=EV Life Essence Import Hatch
 rosatech.machine.life_essence_hatch.import.iv.name=IV Life Essence Import Hatch
-rosatech.machine.life_essence_hatch.import.luv.name=LuV Life Essence Import Hatch
+rosatech.machine.life_essence_hatch.import.luv.name.name=LuV Life Essence Import Hatch
 rosatech.machine.life_essence_hatch.import.zpm.name=ZPM Life Essence Import Hatch
-rosatech.machine.life_essence_hatch.import.uv.name=UV Life Essence Import Hatch
+rosatech.machine.life_essence_hatch.import.uv.name.name=UV Life Essence Import Hatch
 rosatech.machine.life_essence_hatch.import.uhv.name=UHV Life Essence Import Hatch
 
 rosatech.machine.life_essence_hatch.export.ulv.name=ULV Life Essence Export Hatch
@@ -68,7 +221,7 @@ rosatech.machine.life_essence_hatch.export.mv.name=MV Life Essence Export Hatch
 rosatech.machine.life_essence_hatch.export.hv.name=HV Life Essence Export Hatch
 rosatech.machine.life_essence_hatch.export.ev.name=EV Life Essence Export Hatch
 rosatech.machine.life_essence_hatch.export.iv.name=IV Life Essence Export Hatch
-rosatech.machine.life_essence_hatch.export.luv.name=LuV Life Essence Export Hatch
+rosatech.machine.life_essence_hatch.export.luv.name.name=LuV Life Essence Export Hatch
 rosatech.machine.life_essence_hatch.export.zpm.name=ZPM Life Essence Export Hatch
-rosatech.machine.life_essence_hatch.export.uv.name=UV Life Essence Export Hatch
+rosatech.machine.life_essence_hatch.export.uv.name.name=UV Life Essence Export Hatch
 rosatech.machine.life_essence_hatch.export.uhv.name=UHV Life Essence Export Hatch
