@@ -4,4 +4,9 @@ repositories {
     maven {
         url "http://maven.shadowfacts.net/"
     }
+
+    maven {
+        name = "thiakil"
+        url = "http://maven.thiakil.com"
+    }
 }

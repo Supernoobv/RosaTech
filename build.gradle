@@ -14,6 +14,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.gradle.internal.logging.text.StyledTextOutputFactory
 import org.jetbrains.gradle.ext.Gradle
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 import static org.gradle.internal.logging.text.StyledTextOutput.Style
 
@@ -309,6 +310,9 @@ tasks.withType(ScalaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
+tasks.withType(KotlinCompile).configureEach {
+    kotlinOptions.jvmTarget = "1.8"
+}
 
 // Allow others using this buildscript to have custom gradle code run
 if (getFile('addon.gradle').exists()) {

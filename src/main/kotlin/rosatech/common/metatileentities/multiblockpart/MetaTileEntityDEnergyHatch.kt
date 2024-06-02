@@ -67,12 +67,12 @@ open class MetaTileEntityDEnergyHatch(
         super.update()
         if (world.isRemote) return
 
-        if (offsetTimer % 3 == 0L && network != null) {
+        if (offsetTimer % 2 == 0L && network != null) {
             if (isExport && energyContainer.energyStored > 0) {
-                val filled: Long = network!!.fill(min(GTValues.V[tier] * amperage, energyContainer.energyStored))
+                val filled: Long = network!!.fill(min(energyContainer.energyCapacity, energyContainer.energyStored))
                 this.energyContainer.removeEnergy(filled)
             } else if (!isExport && energyContainer.energyStored < energyContainer.energyCapacity){
-                val drained: Long = network!!.drain(GTValues.V[tier] * amperage)
+                val drained: Long = network!!.drain(energyContainer.energyCapacity - energyContainer.energyStored)
                 this.energyContainer.addEnergy(drained)
             }
         }
@@ -182,7 +182,7 @@ open class MetaTileEntityDEnergyHatch(
 
     override fun readFromNBT(data: NBTTagCompound) {
         super.readFromNBT(data)
-        if (data.hasKey("owner")) {
+        if (data.hasUniqueId("owner")) {
             this.owner = data.getUniqueId("owner")
             setNetworkOwner(this.owner!!)
         }

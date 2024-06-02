@@ -19,7 +19,7 @@ class DimensionalNetData : WorldSavedData {
     override fun readFromNBT(nbt: NBTTagCompound) {
         val size = nbt.getInteger("size")
 
-        val list = nbt.getTagList("nets", Constants.NBT.TAG_COMPOUND)
+            val list = nbt.getTagList("nets", Constants.NBT.TAG_COMPOUND)
         for (i in 0 until size) {
             val compound = list.getCompoundTagAt(i)
 
@@ -73,7 +73,9 @@ class DimensionalNetData : WorldSavedData {
          */
         fun getNet(id: UUID, name: String, type: String): DimensionalNet<*> {
             val networks = netMap.getOrPut(id) { mutableMapOf() }
-            val network = networks.getOrPut(name) { getNetFromType(type).empty() }
+            val network = networks.getOrPut(name) { getNetFromType(type).empty().also {
+                it.owner = id
+            } }
 
             return network
         }

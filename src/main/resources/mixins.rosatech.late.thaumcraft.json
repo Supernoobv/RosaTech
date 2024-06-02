@@ -1,0 +1,12 @@
+{
+  "package": "rosatech.mixin.late.thaumcraft",
+  "refmap": "mixins.rosatech.late.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MTEHolderMixinThaumcraft"
+  ],
+  "client": [],
+  "server": []
+}

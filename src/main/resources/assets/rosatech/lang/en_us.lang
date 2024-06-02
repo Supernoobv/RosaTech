@@ -1,3 +1,14 @@
+# Items
+metaitem.leather.backpack.name=Leather Backpack
+metaitem.processed_leather.backpack.name=Processed Leather Backpack
+metaitem.industrial_leather.backpack.name=Industrial Leather Backpack
+metaitem.smart_backpack.lv.name=LV Smart Backpack
+metaitem.smart_backpack.hv.name=HV Smart Backpack
+
+metaitem.big_item_filter.name=Big Item Filter
+
+
+
 # General
 rosatech.universal.dimensional_energy_capacity=§7Capacity: §9%,d
 rosatech.universal.dimensional_energy_stored=§7Stored: §9%,d
@@ -5,9 +16,67 @@ rosatech.universal.dimensional_energy_stored=§7Stored: §9%,d
 rosatech.dimensional_hatch.set_owner=Replaced network owner
 rosatech.dimensional_hatch.owner=§7Owner: §r%,d
 
+rosatech.machine.essentia_hatch.input.tooltip=Essentia Input for Multiblocks
+rosatech.machine.essentia_hatch.output.tooltip=Essentia Output for Multiblocks
+
+rosatech.universal.tooltip.essentia_storage_capacity=§dEssentia Capacity: §f%,d
 rosatech.machine.dimensional_energy_hatch.tooltip=Configure with a screwdriver!
 
+rosatech.gui.auto_pickup.tooltip.enabled=Auto Pickup Enabled
+rosatech.gui.auto_pickup.tooltip.disabled=Auto Pickup Disabled
+
+rosatech.gui.depositing.tooltip.enabled=Depositing Enabled
+rosatech.gui.depositing.tooltip.disabled=Depositing Disabled
+
+rosatech.gui.restocking.tooltip.enabled=Restocking Enabled
+rosatech.gui.restocking.tooltip.disabled=Restocking Disabled
+
+rosatech.machine.property.essentia.jei_header=Aspects Required:
+
+
 # Machines
+
+
+rosatech.machine.industrial_essentia_smeltery.tooltip=Vaporizing items into essentia!
+rosatech.machine.industrial_essentia_smeltery.coil=For every §F1800K §7Temperature provided by the coils, gain a +50% Recipe Parallel bonus.
+rosatech.machine.industrial_essentia_smeltery.tc_smeltery=Outputs essentia depending on the input item's aspects.
+rosatech.machine.industrial_essentia_smeltery.energy_minimum=§bMV §7Voltage is needed at minimum to process recipes!
+rosatech.machine.industrial_essentia_smeltery.energy_bonus=For every Voltage tier above §eHV§7, temperature is increased by §f250K
+
+rosatech.machine.industrial_essentia_smeltery.name=Industrial Essentia Semeltery
+
+rosatech.machine.essentia.input.hatch.ulv.name=ULV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.lv.name=LV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.mv.name=MV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.hv.name=HV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.ev.name=EV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.iv.name=IV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.luv.name.name=LuV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.zpm.name=ZPM Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.uv.name.name=UV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.uhv.name=UHV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.uev.name=UEV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.uiv.name=UIV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.uxv.name=UXV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.opv.name=OpV Essentia Input Hatch
+rosatech.machine.essentia.input.hatch.max.name=MAX Essentia Input Hatch
+
+rosatech.machine.essentia.output.hatch.ulv.name=ULV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.lv.name=LV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.mv.name=MV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.hv.name=HV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.ev.name=EV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.iv.name=IV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.luv.name=LuV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.zpm.name=ZPM Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.uv.name=UV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.uhv.name=UHV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.uev.name=UEV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.uiv.name=UIV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.uxv.name=UXV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.opv.name=OpV Essentia Output Hatch
+rosatech.machine.essentia.output.hatch.max.name=MAX Essentia Output Hatch
+
 rosatech.machine.dimensional_energy_hatch.input.ulv.name=ULV Dimensional Energy Hatch
 rosatech.machine.dimensional_energy_hatch.input.lv.name=LV Dimensional Energy Hatch
 rosatech.machine.dimensional_energy_hatch.input.mv.name=MV Dimensional Energy Hatch
@@ -166,6 +235,9 @@ rosatech.machine.mana_hatch.export.tooltip=Mana Output for Multiblocks
 rosatech.recipe.mana.input=Mana Input: %d
 rosatech.recipe.mana.output=Mana Output: %d
 
+# Blocks
+tile.large_multiblock_casing_thaumcraft.arcane_sealed_casing.name=Arcane-Sealed Thaumium Casing
+tile.large_multiblock_casing_thaumcraft.eldritch_casing.name=Eldritch Void Metal Casing
 
 # Botania Machines
 rosatech.machine.mana_hatch.import.ulv.name=ULV Mana Import Hatch

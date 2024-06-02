@@ -58,8 +58,8 @@ class DimensionalEnergyNet() : DimensionalNet<Array<Long>> {
 
     override fun empty(): DimensionalEnergyNet {
         val net = DimensionalEnergyNet()
-        net.storage = Array(1) { 0 }
-        net.capacity = Array(1) { 536870912 }
+        net.storage = Array(8) { 0 }
+        net.capacity = Array(8) { 8589934592 }
         return net
     }
 
