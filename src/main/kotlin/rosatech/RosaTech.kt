@@ -27,8 +27,6 @@ import rosatech.client.renderer.textures.RosaTextures
 import rosatech.common.RosaCoverBehaviors
 import rosatech.common.RosaEventHandlers
 import rosatech.common.blocks.RosaMetaBlocks
-import rosatech.common.covers.filter.BigItemFilter
-import rosatech.common.items.BIG_ITEM_FILTER
 import rosatech.common.items.RosaMetaItems
 import rosatech.common.metatileentities.RosaMetaTileEntities
 import rosatech.common.metatileentities.RosaMultiblockAbility
@@ -75,7 +73,6 @@ class RosaTech {
     @EventHandler
     fun init(event: FMLInitializationEvent) {
         RosaCoverBehaviors.init()
-        FilterTypeRegistry.registerItemFilter(5, BigItemFilter::class.java, BIG_ITEM_FILTER.stackForm)
     }
 
     @EventHandler
@@ -89,8 +86,9 @@ class RosaTech {
 
         val registry = event.registry
 
-        registry.register(createItemBlock(RosaMetaBlocks.LARGE_MULTIBLOCK_CASING_THAUM, ::VariantItemBlock))
-
+        if (Loader.isModLoaded("thaumcraft")) {
+            registry.register(createItemBlock(RosaMetaBlocks.LARGE_MULTIBLOCK_CASING_THAUM, ::VariantItemBlock))
+        }
     }
 
     fun <T: Block> createItemBlock(block: T, producer: Function<T, ItemBlock>): ItemBlock {

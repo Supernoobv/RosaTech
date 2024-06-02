@@ -38,6 +38,7 @@ import rosatech.common.blocks.RosaMetaBlocks
 import rosatech.common.metatileentities.RosaMetaTileEntities
 import rosatech.common.metatileentities.RosaMultiblockAbility
 import rosatech.integration.thaumcraft.block.BlockLargeMultiblockCasingThaum
+import rosatech.integration.thaumcraft.metatileentites.RosaTCMetaTileEntities
 import rosatech.integration.thaumcraft.metatileentites.multiblock.ThaumcraftMultiblockAbility
 import rosatech.integration.thaumcraft.recipe.ESSENTIA_SMELTERY_RECIPES
 import rosatech.integration.thaumcraft.recipe.logic.EssentiaSmelteryRecipeLogic
@@ -81,11 +82,11 @@ class MetaTileEntityIndustrialEssentiaSmeltery(metaTileEntityId: ResourceLocatio
             .aisle("XXXXX", "C###C", "C###C", "C###C", "XXXXX")
             .aisle("IXSMO", "CCCCC", "CCCCC", "CCCCC", "XXXXX")
             .where('X', RosaMetaBlocks.LARGE_MULTIBLOCK_CASING_THAUM.getState(BlockLargeMultiblockCasingThaum.CasingType.ARCANE_SEALED_THAUMIUM_CASING))
-            .where('S', RosaMetaTileEntities.INDUSTRIAL_ESSENTIA_SMELTERY, EnumFacing.SOUTH)
+            .where('S', RosaTCMetaTileEntities.INDUSTRIAL_ESSENTIA_SMELTERY, EnumFacing.SOUTH)
             .where('#', Blocks.AIR.defaultState)
             .where('E', MetaTileEntities.ENERGY_INPUT_HATCH[GTValues.MV], EnumFacing.NORTH)
             .where('I', MetaTileEntities.ITEM_IMPORT_BUS[GTValues.LV], EnumFacing.SOUTH)
-            .where('O', RosaMetaTileEntities.ESSENTIA_OUTPUT_HATCH[GTValues.MV], EnumFacing.SOUTH)
+            .where('O', RosaTCMetaTileEntities.ESSENTIA_OUTPUT_HATCH[GTValues.MV], EnumFacing.SOUTH)
             .where('H', MetaTileEntities.MUFFLER_HATCH[GTValues.LV], EnumFacing.UP)
             .where('M', {
                 if (ConfigHolder.machines.enableMaintenance) MetaTileEntities.MAINTENANCE_HATCH
