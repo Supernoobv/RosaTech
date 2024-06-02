@@ -148,7 +148,6 @@ class MetaTileEntityIndustrialEssentiaSmeltery(metaTileEntityId: ResourceLocatio
 
     override fun addInformation(stack: ItemStack, world: World?, tooltip: MutableList<String>, advanced: Boolean) {
         super.addInformation(stack, world, tooltip, advanced)
-        tooltip.add(I18n.format("rosatech.machine.industrial_essentia_smeltery.tooltip"))
         tooltip.add(I18n.format("rosatech.machine.industrial_essentia_smeltery.coil"))
         tooltip.add(I18n.format("rosatech.machine.industrial_essentia_smeltery.tc_smeltery"))
         tooltip.add(I18n.format("rosatech.machine.industrial_essentia_smeltery.energy_minimum"))
