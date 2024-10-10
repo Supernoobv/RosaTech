@@ -5,8 +5,23 @@ metaitem.industrial_leather.backpack.name=Industrial Leather Backpack
 metaitem.smart_backpack.lv.name=LV Smart Backpack
 metaitem.smart_backpack.hv.name=HV Smart Backpack
 
-metaitem.big_item_filter.name=Big Item Filter
+metaitem.dimensional_frequency_tuner.name=Dimensional Frequency Tuner
 
+# Behavior
+rosatech.behavior.dimensional_tuner.copied_frequency=Copied frequency §9%,d to the held tuner.
+rosatech.behavior.dimensional_tuner.pasted_frequency=Pasted frequency §9%,d successfully.
+rosatech.behavior.dimensional_tuner.no_frequency=Dimensional tuner is not linked!
+rosatech.behavior.dimensional_tuner.reset_frequency=Tuner frequency reset.
+rosatech.behavior.dimensional_tuner.create_frequency=New frequency created: §9%,d
+
+rosatech.tooltip.dimensional_tuner.current_frequency=Current Linked frequency: §9%,d
+rosatech.tooltip.dimensional_tuner.no_frequency=Not linked to any frequency.
+
+rosatech.tooltip.dimensional_tuner.hold_shift=§8Hold SHIFT to show usages.
+
+rosatech.tooltip.dimensional_tuner.right_click=Right click: Paste frequency
+rosatech.tooltip.dimensional_tuner.shift_right_click=Shift right click: Copy frequency
+rosatech.tooltip.dimensional_tuner.shift_right_click_air=Shift right click the air: Reset frequency/Create frequency
 
 
 # General
@@ -297,3 +312,6 @@ rosatech.machine.life_essence_hatch.export.luv.name.name=LuV Life Essence Export
 rosatech.machine.life_essence_hatch.export.zpm.name=ZPM Life Essence Export Hatch
 rosatech.machine.life_essence_hatch.export.uv.name.name=UV Life Essence Export Hatch
 rosatech.machine.life_essence_hatch.export.uhv.name=UHV Life Essence Export Hatch
+
+
+

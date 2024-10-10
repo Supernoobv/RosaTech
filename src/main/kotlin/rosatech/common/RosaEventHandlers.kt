@@ -6,10 +6,10 @@ import net.minecraftforge.event.entity.player.EntityItemPickupEvent
 import net.minecraftforge.event.world.WorldEvent
 import net.minecraftforge.fml.common.eventhandler.Event
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
+import rosatech.api.world.data.DimensionalNetData
 import rosatech.common.items.behavior.SmartBackpackBehavior.Companion.insertIntoInventory
 import rosatech.common.items.behavior.SmartBackpackBehavior.Companion.isSmartBackpack
 import rosatech.common.items.behavior.SmartBackpackBehavior.Companion.testItemStack
-import rosatech.common.world.data.DimensionalNetData
 
 class RosaEventHandlers {
 

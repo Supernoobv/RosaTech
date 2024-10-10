@@ -34,7 +34,6 @@ class RosaThaumcraftUtils {
             for (face in EnumFacing.VALUES) {
                 if (!transport.canInputFrom(face)) continue
 
-                val t: TileJarFillable
                 val te = ThaumcraftApiHelper.getConnectableTile(world, pos, face)
                 if (te != null && te is IEssentiaTransport) {
                     if (!te.canOutputTo(face.opposite)) continue

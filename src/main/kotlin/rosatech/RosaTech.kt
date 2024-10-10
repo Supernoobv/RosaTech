@@ -2,7 +2,6 @@ package rosatech
 
 import gregtech.GTInternalTags
 import gregtech.api.block.VariantItemBlock
-import gregtech.common.covers.filter.FilterTypeRegistry
 import net.minecraft.block.Block
 import net.minecraft.item.Item
 import net.minecraft.item.ItemBlock
@@ -22,6 +21,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 import net.minecraftforge.fml.relauncher.Side
 import net.minecraftforge.fml.relauncher.SideOnly
 import rosatech.api.capability.RosaSimpleCapabilityManager
+import rosatech.api.world.data.DimensionalNetData
 import rosatech.client.renderer.textures.RosaGuiTextures
 import rosatech.client.renderer.textures.RosaTextures
 import rosatech.common.RosaCoverBehaviors
@@ -31,7 +31,7 @@ import rosatech.common.items.RosaMetaItems
 import rosatech.common.metatileentities.RosaMetaTileEntities
 import rosatech.common.metatileentities.RosaMultiblockAbility
 import rosatech.common.recipes.RosaRecipeMaps
-import rosatech.common.world.data.DimensionalNetData
+import rosatech.common.world.data.net.DimensionalNetBehaviors
 import rosatech.integration.thaumcraft.recipe.RTThaumcraftRecipeAdditions
 import java.util.function.Function
 
@@ -64,6 +64,8 @@ class RosaTech {
 
         RosaSimpleCapabilityManager.init()
 
+        DimensionalNetBehaviors.init()
+        
         RosaMetaTileEntities.init()
         RosaMetaItems.preInit()
 

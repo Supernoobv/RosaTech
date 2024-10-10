@@ -8,9 +8,8 @@ import gregtech.core.sound.GTSoundEvents
 lateinit var ESSENTIA_GENERATOR_RECIPES: RecipeMap<EssentiaRecipeBuilder>
 lateinit var ESSENTIA_SMELTERY_RECIPES: RecipeMap<EssentiaRecipeBuilder>
 
-class RosaThaumcraftRecipeMaps {
+object RosaThaumcraftRecipeMaps {
 
-    companion object {
         fun preInit() {
             ESSENTIA_GENERATOR_RECIPES = RecipeMap("essentia_generator", 1, 0, 0, 0, EssentiaRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, MoveType.HORIZONTAL)
@@ -21,5 +20,4 @@ class RosaThaumcraftRecipeMaps {
                 .setSound(GTSoundEvents.ARC)
                 .allowEmptyOutput()
         }
-    }
 }
