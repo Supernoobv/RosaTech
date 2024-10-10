@@ -49,7 +49,7 @@ class DimensionalTunerBehavior : IItemBehaviour {
                     compound.setInteger("frequency", frequency)
                     itemStack.tagCompound = compound
 
-                    player.sendMessage(TextComponentTranslation("rosatech.behavior.dimensional_tuner.copied_frequency", frequency.toString()))
+                    player.sendMessage(TextComponentTranslation("rosatech.behavior.dimensional_tuner.copied_frequency"))
                 } else {
                     val compound = itemStack.tagCompound
                     if (compound == null || !compound.hasKey("frequency")) {
@@ -60,7 +60,7 @@ class DimensionalTunerBehavior : IItemBehaviour {
                     val frequency = compound.getInteger("frequency")
 
                     frequencyHolder.updateFrequency(frequency)
-                    player.sendMessage(TextComponentTranslation("rosatech.behavior.dimensional_tuner.pasted_frequency", frequency.toString()))
+                    player.sendMessage(TextComponentTranslation("rosatech.behavior.dimensional_tuner.pasted_frequency"))
 
                 }
             }
@@ -87,7 +87,7 @@ class DimensionalTunerBehavior : IItemBehaviour {
                     compound.setInteger("frequency", frequency)
                     itemStack.tagCompound = compound
 
-                    player.sendMessage(TextComponentTranslation("rosatech.behavior.dimensional_tuner.create_frequency", frequency.toString()))
+                    player.sendMessage(TextComponentTranslation("rosatech.behavior.dimensional_tuner.create_frequency"))
 
                     return ActionResult.newResult(EnumActionResult.SUCCESS, itemStack)
                 }

@@ -8,11 +8,11 @@ metaitem.smart_backpack.hv.name=HV Smart Backpack
 metaitem.dimensional_frequency_tuner.name=Dimensional Frequency Tuner
 
 # Behavior
-rosatech.behavior.dimensional_tuner.copied_frequency=Copied frequency §9%,d to the held tuner.
-rosatech.behavior.dimensional_tuner.pasted_frequency=Pasted frequency §9%,d successfully.
+rosatech.behavior.dimensional_tuner.copied_frequency=Copied frequency to the held tuner.
+rosatech.behavior.dimensional_tuner.pasted_frequency=Pasted frequency successfully.
 rosatech.behavior.dimensional_tuner.no_frequency=Dimensional tuner is not linked!
 rosatech.behavior.dimensional_tuner.reset_frequency=Tuner frequency reset.
-rosatech.behavior.dimensional_tuner.create_frequency=New frequency created: §9%,d
+rosatech.behavior.dimensional_tuner.create_frequency=New frequency created
 
 rosatech.tooltip.dimensional_tuner.current_frequency=Current Linked frequency: §9%,d
 rosatech.tooltip.dimensional_tuner.no_frequency=Not linked to any frequency.

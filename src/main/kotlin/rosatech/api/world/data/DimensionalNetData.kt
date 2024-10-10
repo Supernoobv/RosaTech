@@ -60,6 +60,8 @@ class DimensionalNetData : WorldSavedData {
                 tag.setInteger("frequency", net.frequency)
 
                 net.writeToNBT(tag)
+
+                list.appendTag(tag)
             }
         }
 
