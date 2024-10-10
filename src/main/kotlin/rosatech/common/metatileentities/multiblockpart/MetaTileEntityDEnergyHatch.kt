@@ -6,7 +6,6 @@ import codechicken.lib.render.pipeline.IVertexOperation
 import codechicken.lib.vec.Matrix4
 import gregtech.api.GTValues
 import gregtech.api.capability.IEnergyContainer
-import gregtech.api.capability.impl.EnergyContainerHandler
 import gregtech.api.gui.GuiTextures
 import gregtech.api.gui.ModularUI
 import gregtech.api.gui.widgets.AdvancedTextWidget
@@ -30,10 +29,13 @@ import net.minecraft.util.text.TextComponentString
 import net.minecraft.util.text.TextComponentTranslation
 import net.minecraft.world.World
 import org.jetbrains.annotations.NotNull
+import rosatech.RosaTech
+import rosatech.api.capability.impl.WirelessEnergyContainer
+import rosatech.api.world.net.nets.DimensionalEnergyNet
 import rosatech.client.renderer.textures.RosaTextures
 import rosatech.common.metatileentities.RosaMetaTileEntities
-import rosatech.common.world.data.DimensionalEnergyNet
-import rosatech.common.world.data.DimensionalNetData
+import rosatech.api.world.data.DimensionalNetData
+import rosatech.api.world.net.mte.IDimensionalNetHolder
 import java.util.UUID
 import kotlin.math.min
 
@@ -42,45 +44,38 @@ open class MetaTileEntityDEnergyHatch(
     tier: Int,
     val amperage: Int,
     val isExport: Boolean
-) : MetaTileEntityMultiblockPart(metaTileEntityId, tier), IMultiblockAbilityPart<IEnergyContainer> {
+) : MetaTileEntityMultiblockPart(metaTileEntityId, tier), IMultiblockAbilityPart<IEnergyContainer>, IDimensionalNetHolder {
 
-    protected var network: DimensionalEnergyNet? = null
-    protected var owner: UUID? = null
+    var network: DimensionalEnergyNet = DimensionalNetData.getOrCreateNetwork(0, RosaTech.ID("energy")) as DimensionalEnergyNet
 
     protected var energyContainer: IEnergyContainer
 
     init {
         if (isExport) {
             this.energyContainer =
-                EnergyContainerHandler.emitterContainer(
-                    this, GTValues.V[tier] * 64 * amperage, GTValues.V[tier], amperage.toLong()
+                WirelessEnergyContainer.emitterContainer(
+                    this, network, GTValues.V[tier] * 64 * amperage, GTValues.V[tier], amperage.toLong()
                 )
         } else {
             this.energyContainer =
-                EnergyContainerHandler.receiverContainer(
-                    this, GTValues.V[tier] * 16 * amperage, GTValues.V[tier], amperage.toLong()
+                WirelessEnergyContainer.receiverContainer(
+                    this, network, GTValues.V[tier] * 16 * amperage, GTValues.V[tier], amperage.toLong()
                 )
-        }
-    }
-
-    override fun update() {
-        super.update()
-        if (world.isRemote) return
-
-        if (offsetTimer % 2 == 0L && network != null) {
-            if (isExport && energyContainer.energyStored > 0) {
-                val filled: Long = network!!.fill(min(energyContainer.energyCapacity, energyContainer.energyStored))
-                this.energyContainer.removeEnergy(filled)
-            } else if (!isExport && energyContainer.energyStored < energyContainer.energyCapacity){
-                val drained: Long = network!!.drain(energyContainer.energyCapacity - energyContainer.energyStored)
-                this.energyContainer.addEnergy(drained)
-            }
         }
     }
 
     override fun createMetaTileEntity(tileEntity: IGregTechTileEntity): MetaTileEntity {
         return MetaTileEntityDEnergyHatch(metaTileEntityId, tier, amperage, isExport)
     }
+
+    override fun updateFrequency(frequency: Int) {
+        val newNetwork = DimensionalNetData.getOrCreateNetwork(frequency, RosaTech.ID("energy")) as DimensionalEnergyNet
+        network = newNetwork
+
+        (energyContainer as WirelessEnergyContainer).net = newNetwork
+    }
+
+    override fun getFrequency(): Int = network.frequency
 
     override fun renderMetaTileEntity(
         renderState: CCRenderState,
@@ -91,23 +86,6 @@ open class MetaTileEntityDEnergyHatch(
         if (shouldRenderOverlay()) {
             getOverlay().renderSided(frontFacing, renderState, translation, pipeline)
         }
-    }
-
-    override fun onScrewdriverClick(
-        playerIn: EntityPlayer,
-        hand: EnumHand,
-        facing: EnumFacing,
-        hitResult: CuboidRayTraceResult
-    ): Boolean {
-        setNetworkOwner(playerIn.uniqueID)
-
-        if (!world.isRemote) {
-            playerIn.sendStatusMessage(
-                TextComponentTranslation("rosatech.dimensional_hatch.set_owner"), true
-            )
-        }
-
-        return true
     }
 
     @NotNull
@@ -122,20 +100,15 @@ open class MetaTileEntityDEnergyHatch(
         }
     }
 
-    fun setNetworkOwner(player: UUID) {
-        network = DimensionalNetData.getNet(player, "energy", DimensionalEnergyNet::class.qualifiedName!!) as DimensionalEnergyNet
-        owner = player
-    }
-
     fun getCapacityText(): (MutableList<ITextComponent>) -> Unit {
         return { list: MutableList<ITextComponent> ->
-            list.add(TextComponentString(I18n.format("rosatech.universal.dimensional_energy_capacity", network?.getCapacity())))
+            list.add(TextComponentString(I18n.format("rosatech.universal.dimensional_energy_capacity", network.getCapacity())))
         }
     }
 
     fun getStoredText(): (MutableList<ITextComponent>) -> Unit {
         return { list: MutableList<ITextComponent> ->
-            list.add(TextComponentString(I18n.format("rosatech.universal.dimensional_energy_stored", network?.getStored())))
+            list.add(TextComponentString(I18n.format("rosatech.universal.dimensional_energy_stored", network.getStored())))
         }
     }
 
@@ -147,6 +120,7 @@ open class MetaTileEntityDEnergyHatch(
     ) {
         val tierName: String = GTValues.VNF[tier]
 
+        addDescriptorTooltip(stack, world, tooltip, advanced)
         if (isExport) {
             tooltip.add(I18n.format("gregtech.universal.tooltip.voltage_out", energyContainer.outputVoltage, tierName))
             tooltip.add(I18n.format("gregtech.universal.tooltip.amperage_out_till", energyContainer.outputAmperage))
@@ -176,16 +150,16 @@ open class MetaTileEntityDEnergyHatch(
 
     override fun writeToNBT(data: NBTTagCompound): NBTTagCompound {
         super.writeToNBT(data)
-        if (this.owner != null) data.setUniqueId("owner", owner!!)
+        data.setInteger("frequency", getFrequency())
+
         return data
     }
 
     override fun readFromNBT(data: NBTTagCompound) {
         super.readFromNBT(data)
-        if (data.hasUniqueId("owner")) {
-            this.owner = data.getUniqueId("owner")
-            setNetworkOwner(this.owner!!)
-        }
+
+        val frequency = data.getInteger("frequency")
+        updateFrequency(frequency)
     }
 
     override fun getSubItems(creativeTab: CreativeTabs, subItems: NonNullList<ItemStack>) {
